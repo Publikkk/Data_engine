@@ -1,0 +1,86 @@
+/* ===== BASE ===== */
+body {
+  background: #0f172a;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+.mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===== GLOW & CARDS ===== */
+.glow-cyan { box-shadow: 0 0 12px rgba(6, 182, 212, 0.3); }
+.glow-emerald { box-shadow: 0 0 12px rgba(16, 185, 129, 0.25); }
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  transition: all 0.15s ease;
+}
+.card:hover { border-color: #06b6d4; }
+
+/* ===== INPUTS ===== */
+.terminal-input {
+  background: #0f172a;
+  border: 1px solid #334155;
+  transition: border 0.2s;
+}
+.terminal-input:focus {
+  border-color: #06b6d4;
+  outline: none;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #06b6d4; }
+
+/* ===== TABLE ROW ===== */
+.data-row:hover {
+  background: #2d3b4f;
+  cursor: pointer;
+}
+
+/* ===== BADGES ===== */
+.badge-bank {
+  background: #06b6d420;
+  color: #06b6d4;
+  border: 1px solid #06b6d440;
+}
+.badge-sosmed {
+  background: #10b98120;
+  color: #10b981;
+  border: 1px solid #10b98140;
+}
+
+/* ===== CHART CONTAINER ===== */
+.chart-container {
+  position: relative;
+  height: 180px;
+  width: 100%;
+}
+
+/* ===== TOAST ===== */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: #1e293b;
+  border-left: 4px solid #06b6d4;
+  padding: 12px 20px;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hide-mobile { display: none; }
+}
