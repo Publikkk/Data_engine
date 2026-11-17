@@ -32,11 +32,11 @@ export function renderGrid(records) {
     return `<tr class="data-row border-b border-slate-700/50" data-id="${r.id}">
       <td class="p-2 mono text-cyan-400">${r.id}</td>
       <td class="p-2 text-slate-200">${r.nama_lengkap}</td>
-      <td class="p-2 mono hide-mobile">${phone}</td>
-      <td class="p-2 text-slate-400 hide-mobile text-xs max-w-[200px] truncate">${r.alamat}</td>
-      <td class="p-2 mono hide-mobile">${r.tanggal_lahir}</td>
+      <td class="p-2 mono">${phone}</td>
+      <td class="p-2 text-slate-400 text-xs min-w-[220px] max-w-[220px] truncate">${r.alamat}</td>
+      <td class="p-2 mono">${r.tanggal_lahir}</td>
       <td class="p-2"><span class="badge-bank px-1.5 py-0.5 rounded text-[10px] mono">${rek}</span></td>
-      <td class="p-2 text-slate-400 hide-mobile text-xs">${r.email}</td>
+      <td class="p-2 text-slate-400 text-xs min-w-[160px]">${r.email}</td>
       <td class="p-2 hide-mobile"><span class="badge-sosmed px-1.5 py-0.5 rounded text-[10px] mono">${platform}</span></td>
     </tr>`;
   }).join('');
@@ -53,3 +53,13 @@ export function renderGrid(records) {
   document.getElementById('prevPage').disabled = gridState.page <= 1;
   document.getElementById('nextPage').disabled = gridState.page >= totalPages;
 }
+
+// // yang benar (tanpa hide-mobile):
+// <td class="p-2 mono">${phone}</td>
+// <td class="p-2 mono">${r.tanggal_lahir}</td>
+
+// // bukan:
+// <td class="p-2 mono hide-mobile">${phone}</td>
+
+
+
